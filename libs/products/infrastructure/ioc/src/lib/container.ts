@@ -1,34 +1,34 @@
 
-import { Repository } from '@sherpa/products/persistence'
-import { ProductRegistrationService, ProductsService } from '@sherpa/products/application'
+import { RepositoryImpl } from '@sherpa/products/persistence'
+import { ProductRegistrationServiceImpl, ProductsServiceImpl } from '@sherpa/products/application'
 import { Global, Module } from "@nestjs/common";
-import { ConfigService } from '@sherpa/products/config'
+import { ConfigServiceImpl } from '@sherpa/products/config'
 
 @Global()
 @Module({
     providers: [
         {
-            provide: 'IRepository',
-            useClass: Repository
+            provide: 'Repository',
+            useClass: RepositoryImpl
         },
         {
-            provide: 'IProductsService',
-            useClass: ProductsService
+            provide: 'ProductsService',
+            useClass: ProductsServiceImpl
         },
         {
-            provide: 'IProductRegistrationService',
-            useClass: ProductRegistrationService
+            provide: 'ProductRegistrationService',
+            useClass: ProductRegistrationServiceImpl
         },
         {
-            provide: 'IConfigService', 
-            useClass: ConfigService
+            provide: 'ConfigService', 
+            useClass: ConfigServiceImpl
         }
     ],
     exports: [
-        'IRepository',
-        'IProductsService',
-        'IProductRegistrationService',
-        'IConfigService'
+        'Repository',
+        'ProductsService',
+        'ProductRegistrationService',
+        'ConfigService'
     ]
 })
 export class ContainerModule {

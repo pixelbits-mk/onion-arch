@@ -1,11 +1,11 @@
 import { Controller, Get, Inject } from '@nestjs/common';
-import { IConfigService, IProductRegistrationService } from '@sherpa/products/application'
+import { ConfigService, ProductRegistrationService } from '@sherpa/products/application'
 
 @Controller()
 export class ProductsController {
     constructor(
-        @Inject('IProductRegistrationService') private registrationService: IProductRegistrationService,
-        @Inject('IConfigService') private configService: IConfigService
+        @Inject('ProductRegistrationService') private registrationService: ProductRegistrationService,
+        @Inject('ConfigService') private configService: ConfigService
     ) {
 
     }

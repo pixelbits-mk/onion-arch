@@ -1,4 +1,4 @@
-import { IConfigService } from '@sherpa/products/application'
-export class ConfigService implements IConfigService {
+import { ConfigService } from '@sherpa/products/application'
+export class ConfigServiceImpl implements ConfigService {
 
 }

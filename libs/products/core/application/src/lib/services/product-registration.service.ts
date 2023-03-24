@@ -1,9 +1,9 @@
 import { Injectable } from "@nestjs/common";
-import { IProductRegistrationService } from "../interfaces/product-registration.interface";
+import { ProductRegistrationService } from "../interfaces/product-registration.interface";
 import { Product } from '@sherpa/products/domain'
 
 @Injectable()
-export class ProductRegistrationService implements IProductRegistrationService {
+export class ProductRegistrationServiceImpl implements ProductRegistrationService {
     async retrieveProducts(): Promise<Product[]> {
         console.log('retrieveProducts')
         return []

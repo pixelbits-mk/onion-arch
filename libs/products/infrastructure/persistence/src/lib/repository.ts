@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { IRepository } from '@sherpa/products/domain'
+import { Repository } from '@sherpa/products/domain'
 @Injectable()
-export class Repository implements IRepository {
+export class RepositoryImpl implements Repository {
     async create<T>(item: T): Promise<T> {
         console.log('create')
         return null

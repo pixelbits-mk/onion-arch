@@ -1,10 +1,10 @@
 import { Injectable } from "@nestjs/common";
 import { Inject } from "@nestjs/common";
-import { IProductsService, IRepository, Product } from "@sherpa/products/domain";
+import { ProductsService, Repository, Product } from "@sherpa/products/domain";
 
 @Injectable()
-export class ProductsService implements IProductsService {
-    constructor(@Inject('IRepository') private repository: IRepository) {
+export class ProductsServiceImpl implements ProductsService {
+    constructor(@Inject('Repository') private repository: Repository) {
 
     }
     addProduct(title: string, description: string): Promise<Product> {
