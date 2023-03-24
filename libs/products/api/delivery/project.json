@@ -1,32 +1,32 @@
 {
-  "name": "products-adapters-delivery",
+  "name": "products-api-delivery",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/products/adapters/delivery/src",
+  "sourceRoot": "libs/products/api/delivery/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/products/adapters/delivery",
-        "tsConfig": "libs/products/adapters/delivery/tsconfig.lib.json",
-        "packageJson": "libs/products/adapters/delivery/package.json",
-        "main": "libs/products/adapters/delivery/src/index.ts",
-        "assets": ["libs/products/adapters/delivery/*.md"]
+        "outputPath": "dist/libs/products/api/delivery",
+        "tsConfig": "libs/products/api/delivery/tsconfig.lib.json",
+        "packageJson": "libs/products/api/delivery/package.json",
+        "main": "libs/products/api/delivery/src/index.ts",
+        "assets": ["libs/products/api/delivery/*.md"]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/products/adapters/delivery/**/*.ts"]
+        "lintFilePatterns": ["libs/products/api/delivery/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/products/adapters/delivery/jest.config.ts",
+        "jestConfig": "libs/products/api/delivery/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -37,5 +37,5 @@
       }
     }
   },
-  "tags": ["adapter"]
+  "tags": ["api"]
 }

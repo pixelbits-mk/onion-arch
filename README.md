@@ -10,7 +10,7 @@ npx nx generate @nrwl/workspace:lib core --directory=application/products --tags
 
 npx nx generate @nrwl/nest:application products-api --tags=user-interface  -->
 
-npx nx generate @nrwl/nest:lib delivery --directory=products/adapters --tags=adapter --importPath=@sherpa/products/delivery --buildable &
+npx nx generate @nrwl/nest:lib delivery --directory=products/api --tags=user-interface --importPath=@sherpa/products/delivery --buildable &
 npx nx generate @nrwl/workspace:lib application --directory=products/core --tags=application --importPath=@sherpa/products/application --buildable &
 npx nx generate @nrwl/workspace:lib domain --directory=products/core --tags=domain --importPath=@sherpa/products/domain --buildable &
 npx nx generate @nrwl/nest:application products-api --tags=user-interface &
@@ -34,37 +34,37 @@ UI/Delivery Layer: This layer contains the code responsible for presenting infor
 The Onion Architecture promotes loose coupling between the layers, making it easier to test, maintain, and evolve the codebase over time. It also allows for better separation of concerns and enables developers to focus on the business logic rather than the technical details of the application.
 
 @sherpa-apps
-├── apps
-│   └── products-api
+├── apps (user-interface)
+│   └── products-api 
 │
 └── libs
     │
     ├── products    
-    │   ├── adapters
+    │   ├── api 
     │   │   └── *delivery
-    │   │       └── products-api (API Controllers)
-    │   │
+    │   │       └── controllers (API Controllers)
+    │   │           └── products-controller (concrete)
     │   ├── infrastructure        
     │   │   ├── *ioc        
     │   │   ├── *config 
     │   │   │    └── services
-    │   │   │        └── config-service (concrete service)
+    │   │   │        └── config-service (concrete)
     │   │   └── *persistence (repositories)
     │   │        └── firestore (concrete)
     │   │
     │   └── core
     │       ├── *application 
-    │       │   ├── services (application services)
-    │       │   │   ├── products-service (concrete service)         
-    │       │   │   └── other-service (concrete service)
-    │       │   └── interfaces (application interfaces)
+    │       │   ├── services 
+    │       │   │   ├── products-service (concrete)         
+    │       │   │   └── other-service (concrete)
+    │       │   └── interfaces
     │       │       └── config-service (interface)
     │       │           
-    │       └── *domain (domain layer)
+    │       └── *domain
     │           ├── exceptions (custom exceptions)
     │           ├── model (domain entities and value objects)
-    │           ├── services (domain services)
-    │           ├── interfaces (domain interfaces)
+    │           ├── services (concrete)
+    │           ├── interfaces (interfaces)
     │           └── repositories (interfaces)
     │
     └── other-libraries

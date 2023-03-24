@@ -14,7 +14,19 @@
             "depConstraints": [
               {
                 "sourceTag": "user-interface",
-                "onlyDependOnLibsWithTags": ["adapter", "infrastructure"]
+                "onlyDependOnLibsWithTags": ["api"]
+              },
+              {
+                "sourceTag": "infrastructure",
+                "onlyDependOnLibsWithTags": ["domain", "application"]
+              },
+              {
+                "sourceTag": "api",
+                "onlyDependOnLibsWithTags": ["application"]
+              },
+              {
+                "sourceTag": "application",
+                "onlyDependOnLibsWithTags": ["domain"]
               }
             ]
           }
