@@ -1,0 +1,41 @@
+{
+  "name": "common-adapters-persistence",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/common/adapters/persistence/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/common/adapters/persistence",
+        "tsConfig": "libs/common/adapters/persistence/tsconfig.lib.json",
+        "packageJson": "libs/common/adapters/persistence/package.json",
+        "main": "libs/common/adapters/persistence/src/index.ts",
+        "assets": ["libs/common/adapters/persistence/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/common/adapters/persistence/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/common/adapters/persistence/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": ["adapter"]
+}

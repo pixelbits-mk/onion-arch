@@ -1,0 +1,41 @@
+{
+  "name": "products-infrastructure-ioc",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/products/infrastructure/ioc/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/products/infrastructure/ioc",
+        "tsConfig": "libs/products/infrastructure/ioc/tsconfig.lib.json",
+        "packageJson": "libs/products/infrastructure/ioc/package.json",
+        "main": "libs/products/infrastructure/ioc/src/index.ts",
+        "assets": ["libs/products/infrastructure/ioc/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/products/infrastructure/ioc/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/products/infrastructure/ioc/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": ["infrastructure"]
+}

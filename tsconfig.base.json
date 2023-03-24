@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@sherpa/common/persistence": [
+        "libs/common/adapters/persistence/src/index.ts"
+      ],
+      "@sherpa/products/application": [
+        "libs/products/core/application/src/index.ts"
+      ],
+      "@sherpa/products/config": [
+        "libs/products/infrastructure/config/src/index.ts"
+      ],
+      "@sherpa/products/delivery": [
+        "libs/products/adapters/delivery/src/index.ts"
+      ],
+      "@sherpa/products/domain": ["libs/products/core/domain/src/index.ts"],
+      "@sherpa/products/ioc": ["libs/products/infrastructure/ioc/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
