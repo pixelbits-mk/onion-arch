@@ -19,7 +19,7 @@ npx nx generate @nrwl/nest:application products-api --tags=user-interface &
 npx nx generate @nrwl/node:lib ioc --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/ioc --buildable &
 npx nx generate @nrwl/node:lib config --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/config --buildable &
 
-@sherpa-apps 
+@sherpa-apps
 ├── apps
 │   └── products-api
 │
@@ -28,29 +28,36 @@ npx nx generate @nrwl/node:lib config --directory=products/infrastructure --tags
     │   └── adapters
     │       └── *persistence (repositories)
     │           └── firestore (concrete)
-    └── products    
-        ├── adapters
-        │   └── *delivery
-        │       └── products-api (API Controllers)
-        ├── infrastructure        
-        │   ├── *ioc        
-        │   └── *config 
-        │        └── services
-        │            └── config-service (concrete service)
-        └── core
-            ├── *application 
-            |    ├── services (application services)
-            |    |   ├── products-service (concrete service)         
-            |    |   └── other-service (concrete service)
-            |    └── interfaces (application interfaces)
-            |        └── config-service (interface)
-            |           
-            └── *domain (domain layer)
-                ├── exceptions (custom exceptions)
-                ├── model (domain entities and value objects)
-                ├── services (domain services)
-                ├── interfaces (domain interfaces)
-                └── repositories (interfaces)
+    │
+    ├── products    
+    │   ├── adapters
+    │   │   └── *delivery
+    │   │       └── products-api (API Controllers)
+    │   │
+    │   ├── infrastructure        
+    │   │   ├── *ioc        
+    │   │   └── *config 
+    │   │        └── services
+    │   │            └── config-service (concrete service)
+    │   │
+    │   └── core
+    │       ├── *application 
+    │       │   ├── services (application services)
+    │       │   │   ├── products-service (concrete service)         
+    │       │   │   └── other-service (concrete service)
+    │       │   └── interfaces (application interfaces)
+    │       │       └── config-service (interface)
+    │       │           
+    │       └── *domain (domain layer)
+    │           ├── exceptions (custom exceptions)
+    │           ├── model (domain entities and value objects)
+    │           ├── services (domain services)
+    │           ├── interfaces (domain interfaces)
+    │           └── repositories (interfaces)
+    │
+    └── other-libraries
+        └── ...
+
 
 @sherpa/common/persistence
 @sherpa/products/delivery
