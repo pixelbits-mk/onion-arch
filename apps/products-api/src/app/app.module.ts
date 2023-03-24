@@ -8,7 +8,6 @@ import { ContainerModule } from '@sherpa/products/ioc'
   providers: [AppService],
 })
 export class AppModule {
-  constructor() {
-  }
+
 
 }

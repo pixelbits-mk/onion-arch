@@ -10,12 +10,12 @@ npx nx generate @nrwl/workspace:lib core --directory=application/products --tags
 
 npx nx generate @nrwl/nest:application products-api --tags=user-interface  -->
 
-npx nx generate @nrwl/node:lib persistence --directory=common/adapters --tags=adapter --importPath=@sherpa/common/persistence --buildable &
 npx nx generate @nrwl/nest:lib delivery --directory=products/adapters --tags=adapter --importPath=@sherpa/products/delivery --buildable &
 npx nx generate @nrwl/workspace:lib application --directory=products/core --tags=application --importPath=@sherpa/products/application --buildable &
 npx nx generate @nrwl/workspace:lib domain --directory=products/core --tags=domain --importPath=@sherpa/products/domain --buildable &
 npx nx generate @nrwl/nest:application products-api --tags=user-interface &
 
+npx nx generate @nrwl/node:lib persistence --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/persistence --buildable &
 npx nx generate @nrwl/node:lib ioc --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/ioc --buildable &
 npx nx generate @nrwl/node:lib config --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/config --buildable &
 
@@ -38,10 +38,6 @@ The Onion Architecture promotes loose coupling between the layers, making it eas
 │   └── products-api
 │
 └── libs
-    ├── common  
-    │   └── adapters
-    │       └── *persistence (repositories)
-    │           └── firestore (concrete)
     │
     ├── products    
     │   ├── adapters
@@ -50,9 +46,11 @@ The Onion Architecture promotes loose coupling between the layers, making it eas
     │   │
     │   ├── infrastructure        
     │   │   ├── *ioc        
-    │   │   └── *config 
-    │   │        └── services
-    │   │            └── config-service (concrete service)
+    │   │   ├── *config 
+    │   │   │    └── services
+    │   │   │        └── config-service (concrete service)
+    │   │   └── *persistence (repositories)
+    │   │        └── firestore (concrete)
     │   │
     │   └── core
     │       ├── *application 

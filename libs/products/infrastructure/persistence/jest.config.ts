@@ -1,11 +1,12 @@
 /* eslint-disable */
 export default {
-  displayName: 'common-adapters-persistence',
+  displayName: 'products-infrastructure-persistence',
   preset: '../../../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]sx?$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../../../coverage/libs/common/adapters/persistence',
+  coverageDirectory:
+    '../../../../coverage/libs/products/infrastructure/persistence',
 };

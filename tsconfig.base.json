@@ -28,7 +28,10 @@
         "libs/products/adapters/delivery/src/index.ts"
       ],
       "@sherpa/products/domain": ["libs/products/core/domain/src/index.ts"],
-      "@sherpa/products/ioc": ["libs/products/infrastructure/ioc/src/index.ts"]
+      "@sherpa/products/ioc": ["libs/products/infrastructure/ioc/src/index.ts"],
+      "@sherpa/products/persistence": [
+        "libs/products/infrastructure/persistence/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
