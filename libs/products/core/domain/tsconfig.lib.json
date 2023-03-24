@@ -5,6 +5,6 @@
     "declaration": true,
     "types": []
   },
-  "include": ["src/**/*.ts", "../application/src/lib/services/products.service.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts"]
 }
