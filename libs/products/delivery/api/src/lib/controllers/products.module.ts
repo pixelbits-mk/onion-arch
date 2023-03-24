@@ -3,7 +3,9 @@ import { ProductsController } from "./products.controller";
 import { ContainerModule } from '@sherpa/products/ioc'
 
 @Module({
-    imports: [ContainerModule],
+    imports: [
+      ContainerModule
+    ],
     controllers: [ProductsController],
     providers: [],
   })

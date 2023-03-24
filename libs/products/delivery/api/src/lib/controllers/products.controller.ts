@@ -11,6 +11,6 @@ export class ProductsController {
     }
     @Get()
     getAll() {
-        return this.registrationService.retrieveProducts()
+       return this.registrationService.retrieveProducts()
     }
 }

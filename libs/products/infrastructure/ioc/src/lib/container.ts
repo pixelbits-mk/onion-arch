@@ -1,5 +1,5 @@
 
-import { Repository } from '@sherpa/common/persistence'
+import { Repository } from '@sherpa/products/persistence'
 import { ProductRegistrationService, ProductsService } from '@sherpa/products/application'
 import { Global, Module } from "@nestjs/common";
 import { ConfigService } from '@sherpa/products/config'
