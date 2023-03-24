@@ -19,6 +19,20 @@ npx nx generate @nrwl/nest:application products-api --tags=user-interface &
 npx nx generate @nrwl/node:lib ioc --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/ioc --buildable &
 npx nx generate @nrwl/node:lib config --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/config --buildable &
 
+# Hexagonal Architecture
+
+The Onion Architecture is a software design pattern that emphasizes decoupling the application's core logic from its external dependencies such as databases, UI frameworks, and web services. It achieves this by organizing the codebase into concentric circles of layers, with the most internal layer being the domain layer, followed by the application layer, the infrastructure layer, and the UI or delivery layer.
+
+Domain Layer: This layer contains the domain model, business rules, and behavior. It is the most internal layer, and its code should be completely independent of any external dependencies.
+
+Application Layer: This layer contains the application logic that implements use cases and orchestrates the interactions between the domain layer and the infrastructure layer. It relies on interfaces defined in the domain layer and provides concrete implementations for them.
+
+Infrastructure Layer: This layer contains the concrete implementations of the interfaces defined in the domain layer. It also contains the code that interacts with external dependencies such as databases, web services, and file systems.
+
+UI/Delivery Layer: This layer contains the code responsible for presenting information to the user and receiving user input. It interacts with the application layer to execute use cases and retrieve information from the domain layer.
+
+The Onion Architecture promotes loose coupling between the layers, making it easier to test, maintain, and evolve the codebase over time. It also allows for better separation of concerns and enables developers to focus on the business logic rather than the technical details of the application.
+
 @sherpa-apps
 ├── apps
 │   └── products-api
