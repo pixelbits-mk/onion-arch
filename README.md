@@ -71,7 +71,7 @@ The Onion Architecture promotes loose coupling between the layers, making it eas
         └── ...
 
 
-@sherpa/common/persistence
+@sherpa/products/persistence
 @sherpa/products/delivery
 @sherpa/products/application
 @sherpa/products/domain
