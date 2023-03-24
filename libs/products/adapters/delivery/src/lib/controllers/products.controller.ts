@@ -1,17 +1,16 @@
 import { Controller, Get, Inject } from '@nestjs/common';
-import { IProductsService } from '@sherpa/products/domain'
-import { IConfigService } from '@sherpa/products/application'
+import { IConfigService, IProductRegistrationService } from '@sherpa/products/application'
 
 @Controller()
 export class ProductsController {
     constructor(
-        @Inject('IProductsService') private productsService: IProductsService,
+        @Inject('IProductRegistrationService') private registrationService: IProductRegistrationService,
         @Inject('IConfigService') private configService: IConfigService
     ) {
 
     }
     @Get()
     getAll() {
-        return this.productsService.getAll()
+        return this.registrationService.retrieveProducts()
     }
 }

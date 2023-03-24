@@ -4,7 +4,12 @@ import { Product } from '@sherpa/products/domain'
 
 @Injectable()
 export class ProductRegistrationService implements IProductRegistrationService {
-    registerProduct(product: Product) {
-        
+    async retrieveProducts(): Promise<Product[]> {
+        console.log('retrieveProducts')
+        return []
+    }
+    async registerProduct(product: Product): Promise<Product>  {
+        console.log('retrieveProducts')
+        return product
     }
 }
