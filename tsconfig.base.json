@@ -24,7 +24,7 @@
       "@sherpa/products/config": [
         "libs/products/infrastructure/config/src/index.ts"
       ],
-      "@sherpa/products/delivery": ["libs/products/api/delivery/src/index.ts"],
+      "@sherpa/products/delivery": ["libs/products/ui/delivery/src/index.ts"],
       "@sherpa/products/domain": ["libs/products/core/domain/src/index.ts"],
       "@sherpa/products/ioc": ["libs/products/infrastructure/ioc/src/index.ts"],
       "@sherpa/products/persistence": [

@@ -10,10 +10,10 @@ npx nx generate @nrwl/workspace:lib core --directory=application/products --tags
 
 npx nx generate @nrwl/nest:application products-api --tags=user-interface  -->
 
-npx nx generate @nrwl/nest:lib delivery --directory=products/api --tags=user-interface --importPath=@sherpa/products/delivery --buildable &
+npx nx generate @nrwl/nest:lib delivery --directory=products/ui --tags=user-interface --importPath=@sherpa/products/delivery --buildable &
 npx nx generate @nrwl/workspace:lib application --directory=products/core --tags=application --importPath=@sherpa/products/application --buildable &
 npx nx generate @nrwl/workspace:lib domain --directory=products/core --tags=domain --importPath=@sherpa/products/domain --buildable &
-npx nx generate @nrwl/nest:application products-api --tags=user-interface &
+npx nx generate @nrwl/nest:application products-api --tags=api &
 
 npx nx generate @nrwl/node:lib persistence --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/persistence --buildable &
 npx nx generate @nrwl/node:lib ioc --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/ioc --buildable &
@@ -34,13 +34,13 @@ UI/Delivery Layer: This layer contains the code responsible for presenting infor
 The Onion Architecture promotes loose coupling between the layers, making it easier to test, maintain, and evolve the codebase over time. It also allows for better separation of concerns and enables developers to focus on the business logic rather than the technical details of the application.
 
 @sherpa-apps
-├── apps (user-interface)
+├── apps 
 │   └── products-api 
 │
 └── libs
     │
     ├── products    
-    │   ├── api 
+    │   ├── ui (user-interface)
     │   │   └── *delivery
     │   │       └── controllers (API Controllers)
     │   │           └── products-controller (concrete)

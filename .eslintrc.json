@@ -13,15 +13,15 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "user-interface",
-                "onlyDependOnLibsWithTags": ["api"]
+                "sourceTag": "api",
+                "onlyDependOnLibsWithTags": ["user-interface"]
               },
               {
                 "sourceTag": "infrastructure",
                 "onlyDependOnLibsWithTags": ["domain", "application"]
               },
               {
-                "sourceTag": "api",
+                "sourceTag": "user-interface",
                 "onlyDependOnLibsWithTags": ["application"]
               },
               {
