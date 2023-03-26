@@ -19,6 +19,10 @@ npx nx generate @nrwl/node:lib persistence --directory=products/infrastructure -
 npx nx generate @nrwl/node:lib ioc --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/ioc --buildable &
 npx nx generate @nrwl/node:lib config --directory=products/infrastructure --tags=infrastructure --importPath=@sherpa/products/config --buildable &
 
+npx nx generate @nrwl/workspace:lib commands --directory=products/public --tags=public --importPath=@sherpa/products/commands --buildable &
+npx nx generate @nrwl/workspace:lib queries --directory=products/public --tags=public --importPath=@sherpa/products/queries --buildable &
+npx nx generate @nrwl/workspace:lib services --directory=products/public --tags=public --importPath=@sherpa/products/services --buildable &
+
 # Hexagonal Architecture
 
 The Onion Architecture is a software design pattern that emphasizes decoupling the application's core logic from its external dependencies such as databases, UI frameworks, and web services. It achieves this by organizing the codebase into concentric circles of layers, with the most internal layer being the domain layer, followed by the application layer, the infrastructure layer, and the UI or delivery layer.
@@ -51,14 +55,21 @@ The Onion Architecture promotes loose coupling between the layers, making it eas
     │   │   │        └── config-service (concrete)
     │   │   └── *persistence (repositories)
     │   │        └── firestore (concrete)
-    │   │
+    │   ├── public        
+    │   │   ├── *commands        
+    │   │   ├── *services 
+    │   │   │    └── services
+    │   │   │        └── product-registration-service (concrete)
+    │   │   └── *queries
+    │   │   
     │   └── core
     │       ├── *application 
     │       │   ├── services 
     │       │   │   ├── products-service (concrete)         
     │       │   │   └── other-service (concrete)
     │       │   └── interfaces
-    │       │       └── config-service (interface)
+    │       │       ├── products-service-interface (concrete)           
+    │       │       └── product-registration-interface (interface)
     │       │           
     │       └── *domain
     │           ├── exceptions (custom exceptions)
@@ -70,9 +81,11 @@ The Onion Architecture promotes loose coupling between the layers, making it eas
     └── other-libraries
         └── ...
 
+* indicates an Nx project 
 
 @sherpa/products/api
 @sherpa/products/persistence
 @sherpa/products/application
 @sherpa/products/domain
 @sherpa/products/ioc
+@sherpa/products/services

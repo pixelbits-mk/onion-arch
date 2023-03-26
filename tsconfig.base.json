@@ -19,6 +19,9 @@
       "@sherpa/products/application": [
         "libs/products/core/application/src/index.ts"
       ],
+      "@sherpa/products/commands": [
+        "libs/products/public/commands/src/index.ts"
+      ],
       "@sherpa/products/config": [
         "libs/products/infrastructure/config/src/index.ts"
       ],
@@ -26,6 +29,10 @@
       "@sherpa/products/ioc": ["libs/products/infrastructure/ioc/src/index.ts"],
       "@sherpa/products/persistence": [
         "libs/products/infrastructure/persistence/src/index.ts"
+      ],
+      "@sherpa/products/queries": ["libs/products/public/queries/src/index.ts"],
+      "@sherpa/products/services": [
+        "libs/products/public/services/src/index.ts"
       ]
     }
   },

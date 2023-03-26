@@ -21,6 +21,11 @@
                 "onlyDependOnLibsWithTags": ["domain", "application"]
               },
               {
+                "sourceTag": "public",
+                "onlyDependOnLibsWithTags": ["application", "infrastructure"]
+              },
+
+              {
                 "sourceTag": "delivery",
                 "onlyDependOnLibsWithTags": ["application"]
               },
